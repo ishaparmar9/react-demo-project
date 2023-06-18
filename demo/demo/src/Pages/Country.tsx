@@ -10,7 +10,6 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { Tooltip, Typography } from "@mui/material";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import { Link } from "react-router-dom";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
@@ -77,7 +76,8 @@ const rows = [
   createData("Brazil", "BR", 210147125, 8515767),
 ];
 
-export default function StickyHeadTable() {
+
+const CountryTable: React.FC  = () => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
@@ -90,6 +90,10 @@ export default function StickyHeadTable() {
   ) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
+  };
+
+  const deleteCountry = (countryCode:string) => {
+    console.log("del"+countryCode);
   };
 
   return (
@@ -217,25 +221,23 @@ export default function StickyHeadTable() {
                         </Tooltip>
                         <Tooltip title="delete" arrow>
                           <Button
-                            variant="outlined"
+                            
                             style={{
                               fontSize: "9px",
                               minWidth: "15px",
                               fontWeight: "bold",
+                              margin: "0px",
+                              padding: "0px"
                             }}
                           >
-                            <Link
-                              to="/country/delete"
+                            <Typography                              
                               style={{
                                 color: "inherit",
                                 textDecoration: "none",
                               }}
-                            >
-                              <DeleteOutlineOutlinedIcon
-                                sx={{ height: "15px", p: 0, m: 0 }}
-                              />
-                              <DeleteModal/>
-                            </Link>
+                            > 
+                              <DeleteModal countryCode={row.code} onDelete={deleteCountry}/>
+                            </Typography>
                           </Button>
                         </Tooltip>
                       </TableCell>
@@ -258,3 +260,5 @@ export default function StickyHeadTable() {
     </>
   );
 }
+
+export default CountryTable;

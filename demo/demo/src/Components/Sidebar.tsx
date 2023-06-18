@@ -110,7 +110,6 @@ const Drawer = styled(MuiDrawer, {
 const Sidebar: React.FC<Props> = ({
   isOpen
 }) => {
-  const theme = useTheme();
   const location = useLocation();
   const [open, setOpen] = React.useState(true);
 

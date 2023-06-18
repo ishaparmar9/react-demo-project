@@ -7,6 +7,7 @@ import City from "./Pages/City";
 import Sidebar from "./Components/Sidebar";
 import AddCountry from "./Pages/AddCountry";
 import AddCity from "./Pages/AddCity";
+import EditCountry from "./Pages/EditCountry";
 
 
 const App: React.FC = () => {
@@ -26,7 +27,7 @@ const App: React.FC = () => {
           <Route path="/city" element={<City />} />
           <Route path="/country/view" element={<City />} />
           <Route path="/country/add" element={<AddCountry />} />
-          <Route path="/country/edit" element={<City />} />
+          <Route path="/country/edit" element={<EditCountry />} />
           <Route path="/city/view" element={<City />} />
           <Route path="/city/add" element={<AddCity />} />
           <Route path="/city/edit" element={<City />} />
