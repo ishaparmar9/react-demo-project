@@ -1,0 +1,17 @@
+.sidebar-tab-hover{
+    transition: background-color 0.3s ease-in-out;
+}
+.sidebar-tab-hover:hover{
+    background-color: rgb(65, 65, 147);
+    color: rgb(255, 255, 255);
+    box-shadow: 5 0 10px rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease-in-out;
+}
+.sidebar-tab-hover-active{
+    color: rgb(40, 40, 79)!important;
+    background-color: lightblue;
+}
+.sidebar-tab-hover-active:hover{
+    color: rgb(40, 40, 79)!important;
+    background-color: rgb(36, 178, 225);
+}
