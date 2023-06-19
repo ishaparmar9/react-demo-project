@@ -1,13 +1,14 @@
 import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Country from "./Pages/Country";
-import City from "./Pages/City";
-import Sidebar from "./Components/Sidebar";
-import AddCountry from "./Pages/AddCountry";
-import AddCity from "./Pages/AddCity";
-import EditCountry from "./Pages/EditCountry";
+import Home from "./pages/Home";
+import Country from "./pages/Country";
+import City from "./pages/City";
+import Sidebar from "./components/Sidebar";
+import AddCountry from "./pages/AddCountry";
+import AddCity from "./pages/AddCity";
+import EditCountry from "./pages/EditCountry";
+import ViewCountry from "./pages/ViewCountry";
 
 
 const App: React.FC = () => {
@@ -25,7 +26,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/country" element={<Country />} />
           <Route path="/city" element={<City />} />
-          <Route path="/country/view" element={<City />} />
+          <Route path="/country/view" element={<ViewCountry />} />
           <Route path="/country/add" element={<AddCountry />} />
           <Route path="/country/edit" element={<EditCountry />} />
           <Route path="/city/view" element={<City />} />
